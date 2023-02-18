@@ -23,6 +23,7 @@ module.exports = {
       process.env.NODE_ENV === 'production' ? 'error' : 'warn',
     'no-console': 'error',
     'react/jsx-key': 'error',
+    'import/no-extraneous-dependencies': 'off',
   },
   ignorePatterns: [
     '**/__generated__/**/*',
