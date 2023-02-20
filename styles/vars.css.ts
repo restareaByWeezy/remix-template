@@ -1,7 +1,98 @@
 import { createGlobalTheme } from '@vanilla-extract/css';
 
-// THEME이 여러 개 늘어날 경우 createThemeContract를 사용하면 됩니다. //
-// https://vanilla-extract.style/documentation/theming/#code-splitting-themes
+export const staticColors = {
+  // GrayScale
+  black: '#1a1a1a',
+  gray5: '#444444',
+  gray4: '#808080',
+  gray3: '#bebebe',
+  gray2: '#f0f0f0',
+  gray1: '#f7f7f7',
+  gray0: '#fafafa',
+  white: '#ffffff',
+
+  // MODAL
+  modal: '#ffffff',
+
+  // BACKGROUND
+  bg_primary: '#ffffff',
+  bg_secondary: '#fafafa',
+  bg_tertiary: '#f0f0f0',
+  // BASE
+  primary: '#6D55CF',
+  primary_sub: '#afa1e5',
+  secondary: '#66659A',
+  secondary_sub: '#d4cdf1',
+  tertiary: '#5035bc',
+  tertiary_sub: '#7e69d5',
+
+  // POINT
+  point: '#F77721',
+  point_sub: '#f99552',
+
+  //DIM COLOR
+  dim50: 'rgba(10, 10, 10, 0.5)',
+  dim20: 'rgba(10, 10, 10, 0.2)',
+
+  // ALERT
+  warning: '#FF6060',
+  warning_sub: '#ff8a8a',
+  success: '#4575F5',
+  error: '#FF3D00',
+  info: '#429AEB',
+
+  sidebar: '#140A33',
+
+  // BlueScale
+  blue9: '#0C2C70',
+  blue8: '#153F88',
+  blue7: '#2159A9',
+  blue6: '#3078CA',
+  blue5: '#429AEB',
+  blue4: '#6FBAF3',
+  blue3: '#8DD0F9',
+  blue2: '#B4E5FD',
+  blue1: '#D9F4FE',
+
+  // Gray Trans
+  g_trans4: 'rgba(176, 179, 188, 0.7)',
+  g_trans3: 'rgba(176, 179, 188, 0.5)',
+  g_trnas2: 'rgba(176, 179, 188, 0.3)',
+  g_trans1: 'rgba(176, 179, 188, 0.1)',
+
+  // btn
+  primary_btn: '#6D55CF',
+  primary_pressed: '#8164F5',
+  secondary_btn: '#464C53',
+  secondary_pressed: '#26282B',
+  tertiary_btn: '#E8EBED',
+  tertiary_pressed: '#C9CDD2',
+
+  disabled: '#E8EBED',
+  disabled_text: '#9EA4AA',
+  disabled_btn: '#E8EBED',
+
+  // background
+  bg: '#ffffff',
+  subBg: '#f0f3f6',
+  darkBg: '#181818',
+
+  // shadow
+  shadow: '0 2px 8px rgb(0 0 0 / 15%)',
+};
+
+export const textColors = {
+  text_base: staticColors.black,
+  text_gray: staticColors.gray4,
+  text_white: staticColors.white,
+  text_disabled: staticColors.gray3,
+  text_text: staticColors.gray3,
+};
+
+export const borderColors = {
+  // border
+  border: '#e6e6e6',
+};
 
 export const vars = createGlobalTheme(':root', {
   breakpoint: {
@@ -9,19 +100,22 @@ export const vars = createGlobalTheme(':root', {
     tablet: '768px',
     desktop: '1024px',
   },
+  grid: {
+    count: '12',
+    gutter: '22px',
+    padding: '15px',
+  },
   space: {
     none: '0',
-    xxs: '4px',
-    xs: '8px',
-    sm: '12px',
-    md: '16px',
-    lg: '20px',
-    xl: '24px',
-    xxl: '28px',
-    xxxl: '32px',
-    card_gap: '20px',
-    container_space: '24px',
-    main_padding: '48px',
+    s5: '5px',
+    s10: '10px',
+    s15: '15px',
+    s20: '20px',
+    s30: '30px',
+    s40: '40px',
+    s60: '60px',
+    s80: '80px',
+    s100: '100px',
   },
   borderRadius: {
     full: '9999px',
@@ -64,81 +158,8 @@ export const vars = createGlobalTheme(':root', {
     WIDGETINPUT: '1',
   },
   color: {
-    primary: '#6D55CF',
-    secondary: '#66659A',
-    // sidebar: '#F2F2FD',
-    sidebar: '#140A33',
-    // GrayScale
-    gray9: '#0a0a0a',
-    gray8: '#1b1d1f',
-    gray7: '#26282b',
-    gray6: '#464c53',
-    gray5: '#73787f',
-    gray4: '#9ea4aa',
-    gray3: '#c9cdd2',
-    gray2: '#e8ebed',
-    gray1: '#f7f8f9',
-
-    // BlueScale
-    blue9: '#0C2C70',
-    blue8: '#153F88',
-    blue7: '#2159A9',
-    blue6: '#3078CA',
-    blue5: '#429AEB',
-    blue4: '#6FBAF3',
-    blue3: '#8DD0F9',
-    blue2: '#B4E5FD',
-    blue1: '#D9F4FE',
-
-    // Gray Trans
-    g_trans4: 'rgba(176, 179, 188, 0.7)',
-    g_trans3: 'rgba(176, 179, 188, 0.5)',
-    g_trnas2: 'rgba(176, 179, 188, 0.3)',
-    g_trans1: 'rgba(176, 179, 188, 0.1)',
-
-    // TextColor
-    primary_text: '#1b1d1f', //Gray 8
-    secondary_text: '#464c53', //Gray 6
-    tertiary_text: '#9ea4aa', //Gray 4
-    white_text: '#FCF9FF',
-    white: '#ffffff',
-
-    // btn
-    primary_btn: '#6D55CF',
-    primary_pressed: '#8164F5',
-    // secondary_btn: '#797995',
-    // secondary_pressed: '#7e7995',
-    // tertiary_btn: '#E8EBED',
-    // tertiary_pressed: '#C9CDD2',
-    secondary_btn: '#464C53',
-    secondary_pressed: '#26282B',
-    tertiary_btn: '#E8EBED',
-    tertiary_pressed: '#C9CDD2',
-
-    //status
-    success: '#00BFA5',
-    warning: '#FFB300',
-    error: '#FF3D00',
-    info: '#429AEB',
-
-    disabled: '#E8EBED',
-    disabled_text: '#9EA4AA',
-    disabled_btn: '#E8EBED',
-
-    // border
-    border: '#DFE3E5',
-    border_focus: '#429AEB',
-    border_error: '#FF3D00',
-    border_success: '#00BFA5',
-    border_warning: '#FFB300',
-    border_info: '#429AEB',
-
-    // background
-    bg: '#ffffff',
-    subBg: '#f4f6f8',
-    darkBg: '#181818',
-
-    // shadow
-    shadow: '0 2px 8px rgb(0 0 0 / 15%)',
+    ...staticColors,
+    ...textColors,
+    ...borderColors,
   },
 });
